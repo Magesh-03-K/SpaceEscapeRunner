@@ -21,6 +21,8 @@ export default function useGameEngine() {
 
     const [gameOver, setGameOver] = useState(false);
 
+    const [exploding, setExploding] = useState(false);
+
     const player = usePlayer();
 
     const asteroids = useAsteroids();
@@ -114,6 +116,19 @@ export default function useGameEngine() {
                 setGameOver(true);
 
             }
+            if (hit && !exploding && !gameOver) {
+
+                setExploding(true);
+
+                setTimeout(() => {
+
+                    setGameOver(true);
+
+                    setExploding(false);
+
+                }, 700);
+
+            }
 
         });
         }, true);
@@ -123,6 +138,7 @@ export default function useGameEngine() {
     function restartGame() {
 
         setGameOver(false);
+        setExploding(false);
 
         setScore(0);
 
@@ -158,6 +174,8 @@ export default function useGameEngine() {
         score,
 
         highScore,
+
+        exploding,
 
         gameOver,
 

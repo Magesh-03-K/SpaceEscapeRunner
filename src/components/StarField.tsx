@@ -1,41 +1,36 @@
-import { View, StyleSheet, Dimensions } from "react-native";
-
+//import { View, StyleSheet, Dimensions } from "react-native";
+import { Dimensions } from "react-native";
+import Star from "./Star";
 const { width, height } = Dimensions.get("window");
 
-const stars = Array.from({ length: 60 }, (_, index) => ({
+const stars = Array.from({ length: 70 }, (_, index) => ({
     id: index,
     x: Math.random() * width,
+
     y: Math.random() * height,
+
     size: Math.random() * 3 + 1,
+
     opacity: Math.random() * 0.8 + 0.2,
+
+    duration: Math.random() * 6000 + 4000,
 }));
 
 export default function StarField() {
     return (
         <>
             {stars.map((star) => (
-                <View
+
+                <Star
                     key={star.id}
-                    style={[
-                        styles.star,
-                        {
-                            left: star.x,
-                            top: star.y,
-                            width: star.size,
-                            height: star.size,
-                            opacity: star.opacity,
-                        },
-                    ]}
+                    x={star.x}
+                    startY={star.y}
+                    size={star.size}
+                    opacity={star.opacity}
+                    duration={star.duration}
                 />
+
             ))}
         </>
     );
-}
-
-const styles = StyleSheet.create({
-    star: {
-        position: "absolute",
-        backgroundColor: "white",
-        borderRadius: 10,
-    },
-});
+};

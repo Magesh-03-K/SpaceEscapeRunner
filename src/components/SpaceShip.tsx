@@ -1,5 +1,13 @@
 import { View, StyleSheet } from "react-native";
-import Animated, { useAnimatedStyle, SharedValue } from "react-native-reanimated";
+import Animated, {
+  SharedValue,
+  useAnimatedStyle,
+  useSharedValue,
+  withRepeat,
+  withTiming,
+  useAnimatedReaction,
+} from "react-native-reanimated";
+
 
 type SpaceShipProps = {
     x: SharedValue<number>;
@@ -10,6 +18,20 @@ export default function SpaceShip({
   x,
   
 }: SpaceShipProps) {
+
+  const flameScale = useSharedValue(1);
+
+  useAnimatedReaction(
+    () => true,
+    () => {
+      flameScale.value = withRepeat(
+        withTiming(1.5, { duration: 300 }),
+        -1,
+        true
+      );
+    },
+    []
+  );
 
   const animatedStyle = useAnimatedStyle(() => {
     return {
@@ -22,10 +44,21 @@ export default function SpaceShip({
     };
   });
 
+  const flameStyle = useAnimatedStyle(() => ({
+    transform: [
+      {
+        scaleY: flameScale.value,
+      },
+    ],
+  }));
+
+  
+
   return (
     <Animated.View style={animatedStyle}>
       <View style={styles.container}>
 
+          <View style={styles.glow} />
           {/* Cockpit */}
           <View style={styles.cockpit} />
 
@@ -47,9 +80,19 @@ export default function SpaceShip({
 
           <View style={styles.engineRow}>
 
-              <View style={styles.flame} />
+              <Animated.View
+                  style={[
+                      styles.flame,
+                      flameStyle,
+                  ]}
+              />
 
-              <View style={styles.flame} />
+              <Animated.View
+                  style={[
+                      styles.flame,
+                      flameStyle,
+                  ]}
+              />
 
           </View>
 
@@ -122,4 +165,19 @@ const styles = StyleSheet.create({
       borderBottomRightRadius: 6,
   },
 
+  glow: {
+
+      position: "absolute",
+
+      width: 60,
+
+      height: 70,
+
+      borderRadius: 35,
+
+      backgroundColor: "#29B6F6",
+
+      opacity: 0.15,
+
+  },
 });

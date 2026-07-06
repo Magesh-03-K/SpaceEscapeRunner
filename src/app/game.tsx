@@ -8,6 +8,8 @@ import useGameEngine from "../hooks/useGameEngine";
 import { Text } from "react-native";
 import GameButton from "../components/GameButton";
 
+import Explosion from "../components/Explosion";
+
 
 
 //Asteroid 
@@ -63,7 +65,7 @@ export default function GameScreen() {
     <View style={styles.container}>
 
       <Background />
-      <StarField />
+      <StarField paused={game.gameOver} />
 
       <ScoreBoard score={game.score} />
 
@@ -112,11 +114,25 @@ export default function GameScreen() {
       }
             
         <View style={styles.shipContainer}>
-            <SpaceShip
-                x={game.player.playerX}
-               
-            />
-        </View>
+            {
+                !game.exploding &&
+                !game.gameOver && (
+
+                    <SpaceShip
+                        x={game.player.playerX}
+                    />
+
+                )
+            }
+
+            {
+                game.gameOver && (
+                //<View style={{position: "absolute",bottom: 65, alignSelf: "center",}}>
+                    <Explosion />
+                //</View>
+                )
+            }
+                    </View>
       
 
     </View>
