@@ -37,6 +37,14 @@ A simple 2D endless space survival game built with **React Native** and **Expo**
 
 ---
 
+## 📸 Screenshots
+
+| Home | Gameplay | Game Over |
+|------|-----------|-----------|
+| ![](docs/home.png) | ![](docs/gameplay.png) | ![](docs/gameover.png) |
+
+
+
 ## 📂 Project Structure
 
 ```
