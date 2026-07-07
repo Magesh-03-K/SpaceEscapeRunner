@@ -2,7 +2,7 @@
   <img src="docs/banner.png" alt="Space Escape Runner Banner" width="100%">
 </p>
 
-<h1 align="center">🚀 Space Escape Runner</h1>
+
 
 <p align="center">
 A 2D endless space survival game built with React Native & Expo.
@@ -24,7 +24,7 @@ Dodge • Survive • Beat Your High Score
 
 
 
-# 🚀 Space Escape Runner
+
 
 A simple 2D endless space survival game built with **React Native** and **Expo**, where players control a spaceship to dodge falling asteroids, survive as long as possible, and achieve the highest score.
 
