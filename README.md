@@ -1,5 +1,14 @@
 # 🚀 Space Escape Runner
 
+![Expo](https://img.shields.io/badge/Expo-SDK%2056-blue)
+![React Native](https://img.shields.io/badge/React%20Native-0.85-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+
+
+# 🚀 Space Escape Runner
+
 A simple 2D endless space survival game built with **React Native** and **Expo**, where players control a spaceship to dodge falling asteroids, survive as long as possible, and achieve the highest score.
 
 ---
