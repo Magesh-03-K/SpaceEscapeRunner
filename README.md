@@ -1,3 +1,20 @@
+<p align="center">
+  <img src="docs/banner.png" alt="Space Escape Runner Banner" width="100%">
+</p>
+
+<h1 align="center">🚀 Space Escape Runner</h1>
+
+<p align="center">
+A 2D endless space survival game built with React Native & Expo.
+</p>
+
+<p align="center">
+Dodge • Survive • Beat Your High Score
+</p>
+
+---
+
+
 # 🚀 Space Escape Runner
 
 ![Expo](https://img.shields.io/badge/Expo-SDK%2056-blue)
