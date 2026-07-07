@@ -43,7 +43,9 @@ A simple 2D endless space survival game built with **React Native** and **Expo**
 |------|-----------|-----------|
 | ![](docs/home.png) | ![](docs/gameplay.png) | ![](docs/gameover.png) |
 
+## 🎮 Demo
 
+![](docs/demo.gif)
 
 ## 📂 Project Structure
 
@@ -134,6 +136,16 @@ eas build -p android --profile preview
 - Beat your highest score.
 
 ---
+
+## What I Learned
+
+- React Native fundamentals
+- Expo Router
+- Reanimated
+- Gesture Handler
+- Game loops
+- Collision detection
+- State management
 
 ## 👨‍💻 Developer
 
